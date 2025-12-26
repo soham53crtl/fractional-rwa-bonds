@@ -1,0 +1,47 @@
+/* Tailwind Directives - The editor might underline these, just ignore it! */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-dark: #020617;
+  --safety-blue: #2563eb;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--navy-dark);
+  color: white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  /* High-end Institutional Glassmorphism */
+  .glass-card {
+    @apply bg-white/[0.02] backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)];
+  }
+
+  /* Smooth button interaction */
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-500 active:scale-95 transition-all duration-200 font-bold rounded-2xl;
+  }
+
+  /* Hide scrollbars for a cleaner look */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom Animation for the "LIVE" pulse dot */
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.animate-pulse-green {
+  animation: pulse-dot 2s infinite;
+}
