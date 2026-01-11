@@ -23,7 +23,6 @@ export default {
     sources: "blockchain/contracts",
     tests: "blockchain/test",
     scripts: "blockchain/scripts",
-    artifacts: "artifacts",
-  },
+    artifacts: "blockchain/artifacts"
+  }
 };
-
